@@ -3,8 +3,8 @@ const User=require('../DB/user');
 const route=express.Router();
 
 route.post('/',async(req,res)=>{
-    const {name, email, phone, gender, password, confirmpassword,age,address}=req.body;
-    if (name==="" || email==="" ||age===""  || phone==="" || gender==""|| password==="" || confirmpassword===""  || address==="") {
+    const {name, email, phone,  password, confirmpassword,age}=req.body;
+    if (name==="" || email==="" ||age===""  || phone==="" || password==="" || confirmpassword==="") {
        return res.status(422).json({error:"Please fill all the fields"}); 
     }
 
@@ -24,7 +24,7 @@ route.post('/',async(req,res)=>{
             var userObj={
                 _id: result._id.toString(),
                 name: result.name,
-                phone: result.email,
+                email: result.email,
             }
             res.status(201).json(userObj);
         }).catch((err)=>res.status(500).json({error:"Failed to register, Try again"}));
