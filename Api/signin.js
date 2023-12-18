@@ -25,9 +25,9 @@ const {sign}= require('jsonwebtoken')
             else{
                 const accessToken=sign({email:email},"maybegeneraterandomly");
                 var userObj = {
-                    _id: userLogin._id.toString(),
-                    name: userLogin.name,
-                    email: userLogin.email,
+                    // _id: userLogin._id.toString(),
+                    // name: userLogin.name,
+                    // email: userLogin.email,
                     accessToken:accessToken
                     // customText: userLogin.customText
                 } 
