@@ -38,7 +38,7 @@ app.use('/Api/payments', require('./Api/payments'));
 // app.use('/Api/soshistory', require('./Api/soshistory'));
 
 connectDB();
-const Port= process.env.PORT || 3001;
+const Port= process.env.PORT || 3000;
 
 app.listen(Port, () => {
     console.log(`Server running on port ${Port}`);
