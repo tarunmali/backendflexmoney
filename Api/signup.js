@@ -3,7 +3,7 @@ const User=require('../DB/user');
 const route=express.Router();
 
 route.post('/',async(req,res)=>{
-    console.log(req.body);
+
     const {name, email, phone,  password, confirmpassword,age}=req.body;
     if (name==="" || email==="" ||age===""  || phone==="" || password==="" || confirmpassword==="") {
        return res.status(422).json({error:"Please fill all the fields"}); 
