@@ -32,7 +32,7 @@ const middleware=(req,res, next )=>{
 app.use('/Api/signup', require('./Api/signup'));
 app.use('/Api/signin', require('./Api/signin'));
 app.use('/Api/payments', require('./Api/payments'));
-// app.use('/Api/viewGuardian', require('./Api/viewGuardian'));
+app.use('/Api/sessions', require('./Api/sessions'));
 // app.use('/Api/editcustomtext', require('./Api/editcustomtext'));
 // app.use('/Api/sendsos', require('./Api/sendsos'));
 // app.use('/Api/soshistory', require('./Api/soshistory'));
@@ -60,9 +60,9 @@ app.get('/payments', (req, res) => {
     res.send("Payments");
 });
 
-// app.get('/viewGuardian', (req, res) => {
-//     res.send("View Guardian");
-// });
+app.get('/sessions', (req, res) => {
+    res.send("View Sessions");
+});
 
 // app.get('/editcustomtext', (req, res) => {
 //     res.send("Edit custom text");
