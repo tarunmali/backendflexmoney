@@ -12,11 +12,16 @@ router.get('/:email', async (req, res) => {
         for (var i = 0; i < enrollments.length; i++) {
             
             var sessionObj = {
+                _id: enrollments[i]._id.toString(),
                 slotId: enrollments[i].slotId,
                 paymentId: enrollments[i].paymentId,
             } 
             sessions.push(sessionObj);
         }
+
+        
+
+
     res.json(sessions);
   } catch (error) {
     console.error(error);
